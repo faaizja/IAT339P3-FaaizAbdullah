@@ -15,12 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Simple form validation feedback
         form.addEventListener('submit', function(event) {
-            // Prevent actual form submission for demo purposes
             event.preventDefault();
-            
-            // You would typically handle form submission via AJAX here
-            // For demonstration, we'll just show a success message
-            alert('Thanks for your message! In a real implementation, this would be sent to the server.');
+            alert('Thanks for your message! I will get back to you as soon as possible!');
             form.reset();
         });
     }

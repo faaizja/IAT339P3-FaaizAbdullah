@@ -620,10 +620,8 @@ p {
     margin-bottom: 1rem;
 }
 
-/* ===== COMPONENTS ===== */
-/* About and Skills Sections */
 .about-section, .skills-section {
-    padding: 2rem 0;
+    padding: 1rem 0;
     max-width: 45rem;
     margin: 0 auto;
     text-align: left;
@@ -633,7 +631,7 @@ p {
 .about-section h2, .skills-section h2 {
     font-family: var(--font-heading);
     font-size: 2.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.1rem;
     letter-spacing: 0.03em;
     font-weight: 400;
     color: var(--text-dark);
@@ -668,7 +666,7 @@ p {
 }
 
 .skills-section h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-align: left;
     color: var(--text-dark);
 }
@@ -678,7 +676,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     gap: 2.5rem 3.5rem;
-    margin: 1.5rem 0 3rem;
+    margin: 1rem 0 3rem;
 }
 
 .skill-tag {
@@ -893,7 +891,7 @@ p {
     display: flex;
     flex-direction: column;
     transition: box-shadow 0.3s ease, transform 0.3s ease; /* Added transform transition */
-    border-radius: 6px;
+    border-radius: 0.4rem;
 }
 
 .project-card:hover {
@@ -1061,23 +1059,38 @@ p {
 }
 
 .send-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2rem;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    display: inline-block;
+    position: relative;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: var(--primary-color);
     border: none;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all var(--transition-speed);
-    min-width: 10rem;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
-.send-button:hover, .send-button:focus {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
+.send-button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.2rem;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.send-button:hover::after, 
+.send-button:focus::after {
+    width: 100%;
+}
+
+.send-button:hover, 
+.send-button:focus {
+    opacity: 1;
 }
 
 /* ===== RESPONSIVE STYLES ===== */
@@ -1227,6 +1240,17 @@ p {
     .skills-list {
         justify-content: space-around;
         gap: 2rem;
+    }
+    
+    .project-image-large,
+    .project-image-medium {
+        border-radius: 6px;
+        margin: 1.75rem auto 2rem;
+    }
+    
+    .image-caption {
+        font-size: 0.85rem;
+        margin: 0.8rem 0 0;
     }
 }
 
@@ -1384,9 +1408,20 @@ p {
     }
     
     .cta-button, .send-button {
-        padding: 0.85rem 1.75rem;
-        min-width: 9rem;
         font-size: 0.9rem;
+    }
+    
+    .project-image-large,
+    .project-image-medium {
+        border-radius: 5px;
+        margin: 1.5rem auto 1.75rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .image-caption {
+        font-size: 0.8rem;
+        margin: 0.7rem 0 0;
+        padding: 0 0.5rem;
     }
 }
 
@@ -1506,8 +1541,12 @@ p {
     }
     
     /* Add extra spacing to clickable elements for better touch targets */
-    .cta-button, .send-button {
+    .cta-button {
         padding: 1.2rem 2rem;
+    }
+    
+    .send-button {
+        padding: 0.7rem 1rem;
     }
     
     .menu a {
@@ -1603,18 +1642,20 @@ p {
 .project-image-large {
     width: 100%;
     margin: 2.5rem 0;
-    border-radius: 6px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .project-image-medium {
     width: 100%;
     max-width: 42rem;
     margin: 2rem auto 2.5rem;
-    border-radius: 6px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .project-image-large img,
@@ -1622,15 +1663,19 @@ p {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: cover;
 }
 
 .image-caption {
     text-align: center;
     font-size: 0.9rem;
-    margin: 0.75rem 0 0;
+    margin: 1rem 0 0;
+    padding: 0 1rem;
     color: var(--text-dark);
-    opacity: 0.8;
-    font-style: italic;
+    opacity: 0.85;
+    font-family: var(--font-main);
+    letter-spacing: 0.01em;
+    line-height: 1.4;
 }
 
 /* Responsive styles for project detail */
