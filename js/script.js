@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form accessibility enhancement
     const form = document.querySelector('.contact-form');
     if (form) {
-        // Add keyboard accessibility for the form submit button
         const submitButton = form.querySelector('button[type="submit"]');
         if (submitButton) {
             submitButton.addEventListener('keydown', function(event) {
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Simple form validation feedback
         form.addEventListener('submit', function(event) {
             event.preventDefault();
             alert('Thanks for your message! I will get back to you as soon as possible!');
@@ -41,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Erasing text
                 typingElement.textContent = currentTitle.substring(0, charIndex - 1);
                 charIndex--;
-                typingSpeed = 50; // Faster when deleting
+                typingSpeed = 50; 
             } else {
                 // Typing text
                 typingElement.textContent = currentTitle.substring(0, charIndex + 1);

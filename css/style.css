@@ -262,7 +262,7 @@ footer {
     transform: translateY(-0.5625rem) rotate(-45deg);
 }
 
-/* Change text color when menu is open */
+
 #menu-toggle:checked ~ .menu-btn .menu-btn__text {
     color: var(--primary-color);
 }
@@ -337,7 +337,7 @@ footer {
     opacity: 1;
 }
 
-/* Add "MENU" label next to hamburger */
+
 .menu-btn__text {
     position: absolute;
     top: 50%;
@@ -350,7 +350,6 @@ footer {
     letter-spacing: 0.1em;
 }
 
-/* Add the contact information in the menu */
 .menu-contact {
     position: absolute;
     top: 50%;
@@ -398,7 +397,7 @@ footer {
     }
     
     .menu-btn__text {
-        display: none; /* Hide the "MENU" text on smaller screens */
+        display: none; 
     }
     
     .menu-contact {
@@ -456,7 +455,7 @@ footer {
         opacity: 1;
     }
     
-    /* Ensure hamburger button is visible when menu is open */
+
     #menu-toggle:checked ~ .menu-btn {
         position: fixed;
         z-index: 200;
@@ -590,7 +589,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ===== TYPOGRAPHY ===== */
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
     line-height: 1.2;
@@ -659,7 +657,7 @@ p {
     color: var(--text-dark);
 }
 
-/* Skills Section */
+
 .skills-section {
     padding: 2rem 0;
     max-width: 45rem;
@@ -840,7 +838,7 @@ p {
     margin-bottom: 2rem;
 }
 
-/* Projects Grid (for projects page) */
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -859,7 +857,7 @@ p {
     letter-spacing: 0.03em;
 }
 
-/* Project page title */
+
 .content-wrapper .page-title {
     font-family: var(--font-heading);
     font-size: 2.5rem;
@@ -893,13 +891,12 @@ p {
     height: 36rem; /* Increased height */
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Added transform transition */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
     border-radius: 0.4rem;
 }
 
 .project-card:hover {
     box-shadow: 0 0.9375rem 1.875rem rgba(0, 0, 0, 0.2);
-    /* transform: translateY(-0.3125rem); */
 }
 
 .project-card h2, .project-card h3 {
@@ -1561,10 +1558,9 @@ p {
     background-repeat: no-repeat;
 }
 
-/* Project Card Touch Device Improvements */
 @media (hover: none) {
     .project-card {
-        /* Show a portion of the image by default for touch devices */
+
         height: auto;
         min-height: 28rem;
     }
@@ -1578,7 +1574,7 @@ p {
         transition: transform 0.2s;
     }
     
-    /* Add extra spacing to clickable elements for better touch targets */
+
     .cta-button {
         padding: 1.2rem 2rem;
     }
@@ -1781,7 +1777,6 @@ p {
     opacity: 1;
 }
 
-/* When menu links are clicked, the checkbox is unchecked, closing the menu */
 #menu-toggle:checked ~ .main-nav .menu a:focus {
     outline: none;
 }
@@ -1922,7 +1917,6 @@ button, .button {
     border: 0;
 }
 
-/* Preloader (if needed) */
 .preloader {
     position: fixed;
     top: 0;
@@ -1951,7 +1945,6 @@ button, .button {
     }
 }
 
-/* Accessibility Focus Styles */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
     outline: 0.125rem solid var(--accent-color);
     outline-offset: 0.25rem;
